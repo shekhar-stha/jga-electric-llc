@@ -12232,53 +12232,6 @@ nav .nav-link:hover {
     width: 100%;
   }
 }
-.nav-hero .hero .img-div .ac {
-  width: 90%;
-  max-height: 30rem;
-  z-index: -1;
-  object-fit: contain;
-  z-index: 1;
-  filter: brightness(70%);
-  z-index: 2;
-}
-@media (max-width: 992px) {
-  .nav-hero .hero .img-div .ac {
-    max-height: 20rem;
-  }
-}
-.nav-hero .hero .img-div .blob {
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  right: 0;
-  bottom: -2%;
-  z-index: -1;
-}
-@media (max-width: 1200px) {
-  .nav-hero .hero .img-div .blob {
-    width: 120%;
-    right: -10%;
-    height: 80%;
-    bottom: 0%;
-  }
-}
-@media (max-width: 992px) {
-  .nav-hero .hero .img-div .blob {
-    width: 100%;
-    right: 0%;
-    height: 80%;
-    bottom: -10%;
-  }
-}
-.nav-hero .hero .img-div .blob-dotted {
-  position: absolute;
-  width: 96%;
-  height: 84%;
-  right: 2%;
-  bottom: 2%;
-  z-index: -1;
-  opacity: 0.4;
-}
 .nav-hero .hero .hero-img {
   position: absolute;
   top: 0;
@@ -12296,24 +12249,46 @@ nav .nav-link:hover {
   width: 100%;
   height: 100%;
   background: rgb(32, 127, 144);
-  background: linear-gradient(90deg, rgb(32, 127, 144) 3%, rgba(32, 127, 144, 0.8856792717) 21%, rgba(32, 127, 144, 0.5047268908) 44%, rgba(32, 127, 144, 0) 100%);
+  background: linear-gradient(90deg, rgb(32, 127, 144) 3%, rgba(32, 127, 144, 0.8856792717) 21%, rgba(32, 127, 144, 0.5047268908) 44%, rgba(32, 127, 144, 0) 93%, rgba(0, 0, 0, 0.3394607843) 100%);
   opacity: 0.8;
   z-index: -2;
+}
+.nav-hero .hero .social-links {
+  top: 18%;
+  right: 2%;
+}
+.nav-hero .hero .social-links i {
+  background-color: #fcfef7;
+  border-radius: 50%;
+  color: #207f90;
+  font-size: 28px;
+  padding: 0.5rem;
+}
+.nav-hero .hero .social-links i:nth-of-type(1) {
+  margin-top: 1.5rem;
+}
+.nav-hero .hero .social-links img {
+  height: 4.5rem;
+  margin-top: 2rem;
+  object-fit: contain;
+  cursor: pointer;
 }
 
 .features {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: -4rem;
-  padding: 0 !important;
+  padding: 0 4rem !important;
   z-index: 2;
-  background-color: #fcfef7;
+  background-color: #207f90;
   position: relative;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: -40px;
 }
 @media (max-width: 1200px) {
   .features {
@@ -12342,7 +12317,8 @@ nav .nav-link:hover {
   padding-right: 1rem;
 }
 .features .feature:nth-of-type(1) {
-  background-color: #f7f2ed;
+  background-color: #207f90;
+  color: #fcfef7;
 }
 .features .feature:nth-of-type(2) {
   background-color: #FD8F3A;
