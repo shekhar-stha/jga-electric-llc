@@ -12355,25 +12355,23 @@ nav .nav-link:hover {
   width: 100%;
   position: relative;
   max-height: 35rem;
+  --bs-gutter-x: 0rem;
+}
+.about-us .img-side::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 8px solid #207f90;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .about-us .img-side img {
-  padding-left: 3rem;
-  padding-right: 3rem;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-@media (max-width: 1200px) {
-  .about-us .img-side img {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-@media (max-width: 576px) {
-  .about-us .img-side img {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
 }
 .about-us .img-side .data-top {
   position: absolute;
@@ -12410,6 +12408,7 @@ nav .nav-link:hover {
   color: #212529;
   font-weight: 500;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 8px solid #207f90;
 }
 .about-us .img-side .data-bottom p {
   text-align: center;
@@ -12440,6 +12439,176 @@ nav .nav-link:hover {
   font-weight: 500;
   font-size: 18px;
   padding-left: 0.8rem;
+}
+
+.laborers-section {
+  margin-top: 5rem;
+  background-color: #207f90;
+  padding: 3rem 0;
+}
+.laborers-section .services-description {
+  width: 25%;
+}
+@media (max-width: 992px) {
+  .laborers-section .services-description {
+    width: 100%;
+  }
+}
+.laborers-section .services-row {
+  width: 73%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+@media (max-width: 992px) {
+  .laborers-section .services-row {
+    width: 100%;
+    margin-top: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .laborers-section .services-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.laborers-section .services-row .service {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.laborers-section .services-row .service::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8548669468) 0%, rgba(0, 0, 0, 0) 52%);
+}
+.laborers-section .services-row .service:hover .img-div img {
+  width: 100%;
+  min-height: 25rem;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+.laborers-section .services-row .service a {
+  position: absolute;
+  left: 4%;
+  bottom: 3%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fcfef7;
+  text-shadow: rgb(0, 0, 0) 0.1em 0.1em 0.2em;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.laborers-section .services-row .service a i {
+  font-size: 20px;
+  padding-left: 10px;
+  align-self: center;
+  color: #FD8F3A;
+}
+.laborers-section .services-row .service .img-div {
+  width: 100%;
+  height: 100%;
+}
+.laborers-section .services-row .service .img-div img {
+  width: 100%;
+  min-height: 25rem;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.why-jga .card {
+  padding: 10px 16px;
+  border: none;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+.why-jga .card img {
+  width: 134px;
+  margin: 10px 0;
+}
+.why-jga .why-jga-dots {
+  top: 15%;
+  right: 5%;
+  z-index: -2;
+}
+
+.services {
+  background-color: #207f90;
+  padding: 3rem 0;
+}
+.services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 992px) {
+  .services .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .services .services-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.services .services-grid .service-col {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #fcfef7;
+}
+.services .services-grid .service-col .img-div {
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+.services .services-grid .service-col .img-div img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .services .services-grid .service-col .img-div img {
+    height: 18rem;
+  }
+}
+.services .services-grid .service-col .icon-div {
+  width: 100%;
+  max-width: 6rem;
+  padding: 1rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: 2;
+  background-color: #207f90;
+  position: absolute;
+  top: 11.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+  .services .services-grid .service-col .icon-div {
+    top: 14.5rem;
+  }
+}
+.services .services-grid .service-col .icon-div img {
+  width: 100%;
+  height: 100%;
+}
+.services .services-grid .service-col .information {
+  padding: 0.4rem 1rem 1.8rem;
+}
+.services .services-grid .service-col .information h4, .services .services-grid .service-col .information .h4 {
+  text-align: center;
+}
+.services .services-grid .service-col .information p {
+  text-align: center;
 }
 
 .cta {
@@ -12503,57 +12672,6 @@ nav .nav-link:hover {
   background-color: #FD8F3A;
   bottom: 0;
   left: 0%;
-}
-
-.services {
-  background-color: #eeeffa;
-  padding: 4rem 0;
-}
-.services .services-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-@media (max-width: 768px) {
-  .services .services-row {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-.services .services-row .service {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.8rem;
-  border-radius: 8px;
-  transition: all 0.5s;
-  cursor: pointer;
-}
-.services .services-row .service:hover {
-  background-color: #207f90;
-}
-.services .services-row .service:hover h4, .services .services-row .service:hover .h4 {
-  color: #fcfef7;
-}
-.services .services-row .service:hover p {
-  color: #fcfef7;
-}
-.services .services-row .service .logo-div {
-  background-color: #FD8F3A;
-  border-radius: 50%;
-  padding: 1.3rem;
-  margin-bottom: 1.5rem;
-}
-.services .services-row .service .logo-div img {
-  width: 4rem;
-  object-fit: contain;
-}
-.services .services-row .service h4, .services .services-row .service .h4 {
-  color: #207f90;
-}
-.services .services-row .service p {
-  text-align: center;
 }
 
 .ratings-grid {
