@@ -621,10 +621,15 @@ const options = document.querySelectorAll('.option');
 const applicationTitle = document.querySelector('.application-title');
 const applicationInfo = document.querySelector('.application-info');
 
+const cardTitle = document.querySelector(".card-title");
+const cardSubtitle = document.querySelector(".card-subtitle");
+const cardInfo = document.querySelector(".card-info");
+const checkboxLabel = document.querySelector(".form-check-label.checkbox");
 // Define the Spanish translations for the labels
 const spanishLabels = [
   'Inglés',
   'Español',
+  'Información Personal',
   'Nombre Completo',
   'Correo Electrónico',
   'Teléfono',
@@ -650,6 +655,7 @@ const spanishLabels = [
 const englishLabels = [
   'English',
   'Spanish',
+  'Personal Information',
   'Full Name',
   'Email',
   'Phone',
@@ -717,16 +723,6 @@ const checkboxSpanish = [
   'Spanish checkbox'
 ]
 
-const radioEnglish = [
-  'Default radio',
-  'Checked checked radio'
-]
-
-const radioSpanish = [
-  'Spanish radio',
-  'Spanish checked radio'
-]
-
 const optionEnglish = [
   'Choose One',
   'Part Time',
@@ -750,20 +746,27 @@ function setSpanishLabels() {
     label.placeholder = spanishPlaceholders[index];
   });
 
-  checkboxLabels.forEach((label, index) => {
-    label.textContent = checkboxSpanish[index];
-  });
-
-  radioLabels.forEach((label, index) => {
-    label.textContent = radioSpanish[index];
-  });
-
   options.forEach((label, index) => {
     label.textContent = optionSpanish[index]
   })
 
-  applicationTitle.textContent = "Formulario de Solicitud de Empleo"
-  applicationInfo.textContent = "Es política de JGA ELECTRIC LLC ofrecer igualdad de oportunidades de empleo a todos los solicitantes y empleados, sin importar su estado legalmente protegido, como raza, color, religión, género, origen nacional, edad, discapacidad o condición de veterano."
+  applicationTitle.textContent = "Formulario de Solicitud de Empleo";
+  applicationInfo.textContent = "Es la política de JGA ELECTRIC LLC proporcionar igualdad de oportunidades de empleo a todos los solicitantes y empleados sin tener en cuenta ninguna condici6n legalmente protegida como raza, color, religión, genero, origen nacional, edad, discapacidad o estado de veterano."
+
+  cardTitle.textContent = "CERTIFICACIÓN";
+  cardSubtitle.textContent = "Deberes y Responsabilidades de la Empresa de Contratación de Personal.";
+
+  cardInfo.innerHTML = `
+        <p class="px-2 card-info">
+        Certifico que la informaci6n proporcionada en esta solicitud es verdadera y exacta. Entiendo que proporcionar informaci6n falsa o engañosa será la base para el rechazo de mi solicitud, o si comienza el empleo, la terminaci6n inmediata. Autorizo a JGA ELECTRIC LLC a ponerse en contacto con antiguos empleadores y organizaciones educativas con respecto a mi empleo y educaci6n. Autorizo a mis antiguos empleadores y organizaciones educativas a comunicar plena y libremente informaci6n con respecto a mi empleo, asistencia y calificaciones anteriores. Autorizo a aquellas personas designadas como referencias para comunicar plena y libremente informaci6n sobre mi empleo y educaci6n anteriores. Si se crea una relaci6n de empleo, entiendo que a menos que se me ofrezca un contrato de empleo escrito especifico firmado en nombre de la organizacion, la relaci6n de empleado será «a voluntad». En otras palabras, la relaci6n será enteramente voluntaria en la naturaleza, y yo o mi empleador será capaz de terminar la relaci6n laboral en cualquier momento y sin causa.
+        Con el aviso apropiado, tendré la discreci6n total y completa para poner fin a la relaci6n laboral cuando elija y por razones de mi elecci6n.
+        </br></br>
+        Del mismo modo, mi empleador tendrá derecho. además, ningún agente, representante, o empleado de JGA ELECTRIC LLC, excepto en un contrato de trabajo escrito especifico firmado en nombre de la organizaci6n por si, tiene el poder de alterar o variar la naturaleza voluntaria de la relaci6n de trabajo. HE LEIDO DETENIDAMENTE LA CERTIFICACION ANTERIOR Y COMPRENDO Y ACEPTO SUS TERMINOS.
+        
+        </p>
+    `;
+
+    checkboxLabel.textContent = "HE LEÍDO ATENTAMENTE LA CERTIFICACIÓN ANTERIOR Y ENTIENDO Y ACEPTO SUS TÉRMINOS.";
 }
 
 // Function to reset the form labels to English
@@ -777,21 +780,70 @@ function setEnglishLabels() {
     label.placeholder = englishPlaceholders[index];
   });
 
-
-  checkboxLabels.forEach((label, index) => {
-    label.textContent = checkboxEnglish[index];
-  });
-
-  radioLabels.forEach((label, index) => {
-    label.textContent = radioEnglish[index];
-  });
-
   options.forEach((label, index) => {
     label.textContent = optionEnglish[index]
   })
 
-  applicationTitle.textContent = "Job Application Form"
-  applicationInfo.textContent = "It is the policy of JGA ELECTRIC LLC to provide equal employment opportunity to all applicants and employees without regard to any legally protected status such as race, color, religion, gender, national origin, age, disability, or veteran status."
+  applicationTitle.textContent = "Job Application Form";
+  applicationInfo.textContent = "It is the policy of JGA ELECTRIC LLC to provide equal employment opportunity to all applicants and employees without regard to any legally protected status such as race, color, religion, gender, national origin, age, disability, or veteran status.";
+
+
+  cardTitle.textContent = "CERTIFICATION";
+  cardSubtitle.textContent = "Staffing Firm Duties and Responsibilities.";
+
+  cardInfo.innerHTML = `
+  <p class="px-2 card-info">
+  Staffing Firm shall: recruit, screen, interview, and assign its
+  employees (the "Assigned Employees"), who are qualified, to perform the
+  work described in Exhibit A for Client at the location and for the time
+  period specified in Exhibit A.
+
+  A; acknowledge and treat the Assigned Employees as employees (and not
+  independent contractors) of the Staffing Firm, pay Assigned Employee
+  wages and provide other benefits as Staffing Firm deems appropriate;
+  pay, withhold, and transmit payroll taxes, provide unemployment
+  insurance and workers' compensation in an amount no less than required
+  by law, and handle workers' compensation and unemployment claims
+  involving Assigned Employees; ensure Assigned Employees are legally
+  authorized to work in the United States, including conducting E-verify
+  checks on each Assigned Employee. require Assigned Employees to
+  acknowledge in writing that they are employees of the Staffing Firm
+  alone and that they are not employees of the Client; require Assigned
+  Employees to acknowledge in writing that they are not entitled to
+  holidays, vacations, disability, insurance, pensions or retirement
+  plans, or any other benefits offered or provided by Client to its
+  employees; require Assigned Employees to sign a confidentiality
+  agreement (if needed by the assignment or the Client) before they begin
+  their assignments to Client;
+  <br>
+  <br>
+  I certify that the information provided in this application is true and
+  accurate. I understand that providing false or misleading information
+  shall be the basis for denial of my application, or immediate
+  termination. I authorize JGA ELECTRIC LLC to contact former employers
+  and educational organizations regarding my employment and education
+  history. I authorize my former employers and education organizations to
+  fully freely communicate information regarding my employment,
+  attendance, and previous ratings. I authorize those persons designated
+  as references to communicate fully and freely information about my
+  previous employment and education. If an employment relationship is
+  created, I understand that unless I am offered a specific written
+  contract of employment signed on behalf of the organization for his, the
+  employment relationship will be "at will" words, the relationship will
+  be entirely voluntary in nature, and I or my employer will be able to
+  terminate the employment relationship at any time without cause. With
+  proper notice, I will have full and complete discretion to terminate the
+  employment relationship at my option and for "Reasons of my choosing.
+  Likewise, my employer will be entitled. Furthermore, no agent,
+  representative, or employee of JGA ELECTRİC LLC, except in a specific
+  written employment contract signed on behalf of the organization itself,
+  it has the power to alter or vary the voluntary nature of the
+  employment.
+  relationship.
+</p>
+    `;
+
+    checkboxLabel.textContent = "I READ CAREFULLY THE ABOVE CERTIFICATION AND I UNDERSTAND AND AGREE TO ITS TERMS";
 }
 
 window.onload = setEnglishLabels
@@ -812,9 +864,14 @@ const form = document.getElementById("employmentForm");
 const checkbox = document.getElementById("formCheckbox");
 const formWarning = document.getElementById("formWarning");
 form.addEventListener("submit", function (event) {
-  if (!checkbox.checked) {
+  if (!checkbox.checked && !toggleSwitch.checked) {
     event.preventDefault(); // Prevent form submission
     formWarning.textContent = "Please check the checkbox to agree with the terms. "
+  }
+
+  if (!checkbox.checked && toggleSwitch.checked) {
+    event.preventDefault(); // Prevent form submission
+    formWarning.textContent = "Por favor, marque la casilla para aceptar los términos. "
   }
 });
 
