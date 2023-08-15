@@ -596,35 +596,6 @@
 AOS.init();
 
 
-// $('.services-row').slick({
-//   dots: true,
-//   infinite: true,
-//   loop: true,
-//   speed: 300,
-//   slidesToShow: 2,
-//   slidesToScroll: 1,
-//   prevArrow: '<i class="fa-solid fa-chevron-left left-arrow"></i>',
-//   nextArrow: '<i class="fa-solid fa-chevron-right right-arrow"></i>',
-//   responsive: [
-//     {
-//       breakpoint: 1200,
-//       settings: {
-//         slidesToShow: 2,
-//         slidesToScroll: 1,
-//         infinite: true,
-//         dots: true
-//       }
-//     },
-//     {
-//       breakpoint: 768,
-//       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//       }
-//     }
-//   ]
-// });
-
 $(".client-slider").slick({
   arrows: false,
   dots: true,
@@ -637,124 +608,218 @@ $(".client-slider").slick({
 });
 
 
-  // Get the toggle switch element
-  const toggleSwitch = document.getElementById('flexSwitchCheckDefault');
+// Get the toggle switch element
+const toggleSwitch = document.getElementById('flexSwitchCheckDefault');
 
-  // Get the form labels you want to change to Spanish
-  const formLabels = document.querySelectorAll('.form-label');
+// Get the form labels you want to change to Spanish
+const formLabels = document.querySelectorAll('.form-label');
 
-  const checkboxLabels = document.querySelectorAll('.checkbox');
+const formControls = document.querySelectorAll('.form-control');
 
-  const radioLabels = document.querySelectorAll('.radio');
+const options = document.querySelectorAll('.option');
 
-  const options = document.querySelectorAll('.option');
+const applicationTitle = document.querySelector('.application-title');
+const applicationInfo = document.querySelector('.application-info');
 
-  // Define the Spanish translations for the labels
-  const spanishLabels = [
-    'Inglés',
-    'Español',
-    'Nombre Completo',
-    'Correo Electrónico',
-    'Teléfono',
-    'Spanish',
-    'Lorem Spanish',
-    'Lorem Spanish',
-    'Mensaje'
-  ];
-  
+// Define the Spanish translations for the labels
+const spanishLabels = [
+  'Inglés',
+  'Español',
+  'Nombre Completo',
+  'Correo Electrónico',
+  'Teléfono',
+  'Dirección Completa (con Ciudad, Estado, Código Postal)',
+  'Número de Seguro Social (SSN)',
+  'Número de Licencia de Conducir (Estatal)',
+  'Posición para la que está solicitando:',
+  'Tiempo Completo o Medio Tiempo?',
+  'Contacto de Emergencia',
+  'Nombre Completo',
+  'Relación contigo',
+  'Dirección Completa (con Ciudad, Estado, Código Postal)',
+  'Número de Teléfono',
+  'Información Adicional',
+  'Enumere cualquier habilidad que pueda ser útil para el trabajo que está buscando. Ingrese el número de años de experiencia:',
+  '¿Quién lo ha recomendado a nuestra empresa?',
+  '¿Tiene amigos o familiares que trabajan aquí? En caso afirmativo, indíquelos aquí:',
+  '¿Ha solicitado trabajo en nuestra empresa antes? (Si es SÍ, ¿cuándo?)'
+];
 
-  const englishLabels = [
-    'English',
-    'Spanish',
-    'Full Name',
-    'Email',
-    'Phone',
-    'Lorem',
-    'Lorem Ipsum',
-    'Lorem Ipsum',
-    'Message'
-    ];
 
-    const checkboxEnglish = [
-      'Default checkbox',
-      'Checked checkbox'
-    ]
 
-    const checkboxSpanish = [
-      'Spanish checkbox',
-      'Spanish checkbox'
-    ]
+const englishLabels = [
+  'English',
+  'Spanish',
+  'Full Name',
+  'Email',
+  'Phone',
+  'Full Address (w/ City, State, Zipcode)',
+  'Social Security Number (SSN)',
+  "Driver's License Number (State)",
+  'Position you are applying for:',
+  'Full Time or Part Time?',
+  'Emergency Contact',
+  'Full Name',
+  'Relationship to you',
+  'Full Address (w/ City, State, Zipcode)',
+  'Phone Number',
+  'Additional Information',
+  'List any skills that might be useful for the job you are seeking. Enter the number of years of experience:',
+  'Who has recommended you to our company?',
+  'Do you have friends or relatives who work here? If so, please list here:',
+  'Have you applied to our company before? (If YES, when?)'
+];
 
-    const radioEnglish = [
-      'Default radio',
-      'Checked checked radio'
-    ]
+const englishPlaceholders = [
+  'Enter your Name',
+  'Enter your Email Address',
+  'Enter your Phone Number',
+  'Enter your Full Address',
+  'Enter your Social Security number',
+  "Enter Your Driver's Licence Number",
+  'Enter the position you are applying',
+  'Enter his/her full name',
+  'Enter his/her relationship with you',
+  'Enter his/her full address',
+  'Enter his/her phone number',
+  'List any skills that might be useful for the job you are seeking. Enter the number of years of experience:',
+  'Who has recommended you to our company?',
+  'Do you have friends or relatives who work here? If so, please list here:',
+  'Have you applied to our company before? (If YES, when?)'
+]
 
-    const radioSpanish = [
-      'Spanish radio',
-      'Spanish checked radio'
-    ]
+const spanishPlaceholders = [
+  'Ingrese su Nombre',
+  'Ingrese su Dirección de Correo Electrónico',
+  'Ingrese su Número de Teléfono',
+  'Ingrese su Dirección Completa',
+  'Ingrese su número de Seguro Social',
+  'Ingrese el Número de su Licencia de Conducir',
+  'Ingrese el puesto para el que está solicitando',
+  'Ingrese el nombre completo de él/ella',
+  'Ingrese la relación que tiene con usted',
+  'Ingrese la dirección completa de él/ella',
+  'Ingrese el número de teléfono de él/ella',
+  'Enumere cualquier habilidad que pueda ser útil para el trabajo que está buscando. Ingrese el número de años de experiencia:',
+  '¿Quién lo ha recomendado a nuestra empresa?',
+  '¿Tiene amigos o familiares que trabajan aquí? En caso afirmativo, indíquelos aquí:',
+  '¿Ha solicitado trabajo en nuestra empresa antes? (Si es SÍ, ¿cuándo?)'
+];
 
-    const optionEnglish = [
-      'Open this select menu',
-      'One',
-      'Two',
-      'Three'
-    ]
 
-    const optionSpanish = [
-      'Open this select Spanish',
-      'Ookne',
-      'Twso',
-      'Threse'
-    ]
+const checkboxEnglish = [
+  'Default checkbox',
+  'Checked checkbox'
+]
 
-  // Function to change the form labels to Spanish
-  function setSpanishLabels() {
-    formLabels.forEach((label, index) => {
-      label.textContent = spanishLabels[index];
-    });
+const checkboxSpanish = [
+  'Spanish checkbox',
+  'Spanish checkbox'
+]
 
-    checkboxLabels.forEach((label, index) => {
-      label.textContent = checkboxSpanish[index];
-    });
+const radioEnglish = [
+  'Default radio',
+  'Checked checked radio'
+]
 
-    radioLabels.forEach((label, index) => {
-      label.textContent = radioSpanish[index];
-    });
+const radioSpanish = [
+  'Spanish radio',
+  'Spanish checked radio'
+]
 
-    options.forEach((label, index) => {
-      label.textContent = optionSpanish[index]
-    })
+const optionEnglish = [
+  'Choose One',
+  'Part Time',
+  'Full Time',
+]
 
-  }
+const optionSpanish = [
+  'Elegir Uno',
+  'Medio Tiempo',
+  'Tiempo Completo',
+];
 
-  // Function to reset the form labels to English
-  function setEnglishLabels() {
-    formLabels.forEach((label, index) => {
-      label.textContent = englishLabels[index];
-    });
 
-    checkboxLabels.forEach((label, index) => {
-      label.textContent = checkboxEnglish[index];
-    });
+// Function to change the form labels to Spanish
+function setSpanishLabels() {
+  formLabels.forEach((label, index) => {
+    label.textContent = spanishLabels[index];
+  });
 
-    radioLabels.forEach((label, index) => {
-      label.textContent = radioEnglish[index];
-    });
+  formControls.forEach((label, index) => {
+    label.placeholder = spanishPlaceholders[index];
+  });
 
-    options.forEach((label, index) => {
-      label.textContent = optionEnglish[index]
-    })
-  }
+  checkboxLabels.forEach((label, index) => {
+    label.textContent = checkboxSpanish[index];
+  });
 
-  // Add event listener to the toggle switch
-  toggleSwitch.addEventListener('change', function() {
-    if (this.checked) {
+  radioLabels.forEach((label, index) => {
+    label.textContent = radioSpanish[index];
+  });
+
+  options.forEach((label, index) => {
+    label.textContent = optionSpanish[index]
+  })
+
+  applicationTitle.textContent = "Formulario de Solicitud de Empleo"
+  applicationInfo.textContent = "Es política de JGA ELECTRIC LLC ofrecer igualdad de oportunidades de empleo a todos los solicitantes y empleados, sin importar su estado legalmente protegido, como raza, color, religión, género, origen nacional, edad, discapacidad o condición de veterano."
+}
+
+// Function to reset the form labels to English
+function setEnglishLabels() {
+  formLabels.forEach((label, index) => {
+    label.textContent = englishLabels[index];
+    label.placeholder = englishPlaceholders[index];
+  });
+
+  formControls.forEach((label, index) => {
+    label.placeholder = englishPlaceholders[index];
+  });
+
+
+  checkboxLabels.forEach((label, index) => {
+    label.textContent = checkboxEnglish[index];
+  });
+
+  radioLabels.forEach((label, index) => {
+    label.textContent = radioEnglish[index];
+  });
+
+  options.forEach((label, index) => {
+    label.textContent = optionEnglish[index]
+  })
+
+  applicationTitle.textContent = "Job Application Form"
+  applicationInfo.textContent = "It is the policy of JGA ELECTRIC LLC to provide equal employment opportunity to all applicants and employees without regard to any legally protected status such as race, color, religion, gender, national origin, age, disability, or veteran status."
+}
+
+window.onload = setEnglishLabels
+
+// Add event listener to the toggle switch
+toggleSwitch.addEventListener('change', function () {
+  if (this.checked) {
     // Toggle switch is ON, change labels to Spanish
     setSpanishLabels();
-    } else {
+  } else {
     // Toggle switch is OFF, reset labels to English
     setEnglishLabels();
-    }
-  });
+  }
+});
+
+
+const form = document.getElementById("employmentForm");
+const checkbox = document.getElementById("formCheckbox");
+const formWarning = document.getElementById("formWarning");
+form.addEventListener("submit", function (event) {
+  if (!checkbox.checked) {
+    event.preventDefault(); // Prevent form submission
+    formWarning.textContent = "Please check the checkbox to agree with the terms. "
+  }
+});
+
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    formWarning.textContent = ""
+  }
+})
